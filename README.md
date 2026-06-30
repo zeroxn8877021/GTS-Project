@@ -1,72 +1,146 @@
+<div align="center">
+
 # GTS
 
-An open-world third-person action game built with Godot Engine, designed and optimized for Android devices.
+### An Open World Third Person Action Game — Built for Android
 
-![Gameplay](Assets/Images/1.jpg)
+![Godot](https://img.shields.io/badge/Engine-Godot%204.6.1-478CBF?style=for-the-badge&logo=godotengine&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![Status](https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge)
+![Language](https://img.shields.io/badge/Script-GDScript-355570?style=for-the-badge)
 
-## Overview
+<img src="Assets/Images/1.jpg" width="100%">
 
-GTS is a mobile-first 3D action game developed from the ground up using Godot Engine 4.6.1. The project combines a fully custom character system, mobile touch controls, urban environment design, and performance-focused architecture to deliver a smooth open-world experience on Android hardware.
+</div>
 
-## Features
+<br>
 
-### World Design
-The game world is structured as a multi-zone open city, composed of modular street sections (Part 1 City, City2, City3) connected through a central scene management system. The environment includes dynamic lighting, real-time shadows, and a stylized urban setting with detailed building geometry and street-level art.
+A city built from nothing. A character built from nothing. A control scheme rebuilt entirely for touch. GTS is a one-developer attempt to bring a full third-person open world action experience to mobile, without cutting corners on how it looks, moves, or feels.
 
-![City Environment](Assets/Images/2.jpg)
+<br>
 
-### Character System
-The player character is built on a fully rigged 3D skeleton with a complete animation pipeline driven by AnimationPlayer and AnimationMixer. Locomotion, combat, and reaction animations are blended for fluid transitions between states, including running, jumping, and melee actions such as punch and head hit responses.
+## What This Project Actually Is
 
-![Character Controller](Assets/Images/3.jpg)
+GTS is not a tutorial project. It is a ground-up open world action game, engineered specifically for Android, where every core system — movement, camera, combat, input, performance — was built and tuned by hand rather than pulled from a template.
 
-### Mobile Controls
-A custom touch input system replaces traditional controllers, built around a virtual joystick for movement and dedicated touch screen buttons for run, jump, and combat actions. The control layout is designed for responsiveness and clarity on a wide range of screen sizes.
+<br>
 
-![Touch Controls](Assets/Images/4.jpg)
+<table>
+<tr>
+<td width="50%" valign="top">
 
-### Camera and Physics
-A SpringArm3D-based third-person camera system provides smooth, collision-aware framing of the player character at all times. Physics interactions are handled through a dedicated CollisionShape3D setup, ensuring accurate movement and interaction with the environment.
+### The City
 
-### Performance Optimization
-A dedicated Performance Manager script governs runtime optimization, allowing the game to maintain stable frame rates across a range of Android devices despite the complexity of the open-world environment.
+A multi-zone urban environment stitched together from modular street blocks, layered with dynamic lighting and live shadow casting. The world is not one giant scene — it is split into independently loaded zones, built to scale as the game grows.
 
-### Heads-Up Display
-The in-game HUD integrates a real-time minimap alongside core gameplay indicators, giving players constant spatial awareness as they navigate the city.
+</td>
+<td width="50%" valign="top">
 
-![HUD and Minimap](Assets/Images/5.jpg)
+<img src="Assets/Images/2.jpg" width="100%">
 
-## Technical Stack
+</td>
+</tr>
+</table>
 
-| Component | Technology |
+<br>
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+<img src="Assets/Images/3.jpg" width="100%">
+
+</td>
+<td width="50%" valign="top">
+
+### The Character
+
+A fully rigged skeleton driving a layered animation pipeline through AnimationPlayer and AnimationMixer. Locomotion, jump, run, and combat reactions like Hit Head blend into each other instead of snapping — built to feel like a real character, not a placeholder.
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### Touch, Rebuilt From Zero
+
+No ported keyboard scheme. The entire control layer was designed for fingers — a virtual joystick for movement and dedicated touch buttons for run, jump, and combat, tuned for responsiveness across different screen sizes.
+
+</td>
+<td width="50%" valign="top">
+
+<img src="Assets/Images/4.jpg" width="100%">
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+<img src="Assets/Images/5.jpg" width="100%">
+
+</td>
+<td width="50%" valign="top">
+
+### Camera, HUD, and the Map
+
+A SpringArm3D camera keeps the action framed and collision-aware at all times. The HUD layers a live minimap on top of gameplay so the player always knows where they stand in the city.
+
+</td>
+</tr>
+</table>
+
+<br>
+
+## Under the Hood
+
+| System | Built With |
 |---|---|
 | Engine | Godot Engine 4.6.1 |
 | Scripting | GDScript |
-| Platform | Android |
-| Rendering | Godot 3D (Forward+ Mobile) |
-| Animation | AnimationPlayer, AnimationMixer |
-| Camera | SpringArm3D |
-| Input | Virtual Joystick, TouchScreenButton |
+| Rendering | Forward+ Mobile Pipeline |
+| Animation | AnimationPlayer + AnimationMixer |
+| Camera | SpringArm3D Third Person Rig |
+| Input | Custom Virtual Joystick + TouchScreenButton |
+| Physics | CollisionShape3D |
+| Optimization | Custom Performance Manager |
 
-## Architecture
+<br>
 
-The project follows a modular scene-based architecture. The player scene encapsulates the character rig, collision shape, camera system, and animation controller as independent, reusable components. The world is split into discrete city sections loaded and managed through a central control scene, allowing for scalable level design as the project grows. UI and gameplay logic are kept separate from world geometry, with the HUD and control scenes operating independently of the environment scenes.
+## How It's Structured
 
-## Roadmap
+The project is built scene-first, not script-first. The player is a self-contained unit — rig, collider, camera, and animation controller all packed into one reusable scene. The city is split into independent zone scenes pulled together by a central control layer, so new districts can be added without touching existing ones. UI lives entirely outside the world logic, which keeps the HUD and controls portable across every scene in the game.
 
-Development is ongoing, with the following systems planned for upcoming releases:
+<br>
 
-- Combat mechanics and enemy AI
-- Mission and storyline progression
-- Expanded city zones and points of interest
-- Additional character animations and combat states
-- Save and progression system
+## What's Coming
 
-## Team
+```
+[ ] Combat system and enemy AI
+[ ] Mission structure and story progression
+[ ] New city zones and landmarks
+[ ] Expanded combat animation set
+[ ] Save and progression system
+```
 
-**Developer:** Paras Sharma
-**Team:** Zerox Team
+<br>
 
-## License
+<div align="center">
 
-This project is currently in active development. Licensing details will be added in a future update.
+## Built By
+
+**Paras Sharma**
+Zerox Team
+
+<sub>GTS is in active development — this README will evolve with the project.</sub>
+
+</div>
