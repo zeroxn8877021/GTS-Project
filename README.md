@@ -2,145 +2,88 @@
 
 # GTS
 
-### An Open World Third Person Action Game — Built for Android
+### Open World Third Person Action Game for Android
 
-![Godot](https://img.shields.io/badge/Engine-Godot%204.6.1-478CBF?style=for-the-badge&logo=godotengine&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
-![Status](https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge)
-![Language](https://img.shields.io/badge/Script-GDScript-355570?style=for-the-badge)
-
-<img src="Assets/Images/1.jpg" width="100%">
+![Godot](https://img.shields.io/badge/Engine-Godot%204.6.1-478CBF?style=flat-square&logo=godotengine&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?style=flat-square&logo=android&logoColor=white)
+![Status](https://img.shields.io/badge/Status-In%20Development-orange?style=flat-square)
 
 </div>
 
 <br>
 
-A city built from nothing. A character built from nothing. A control scheme rebuilt entirely for touch. GTS is a one-developer attempt to bring a full third-person open world action experience to mobile, without cutting corners on how it looks, moves, or feels.
+![Gameplay](Assets/Images/1.jpg)
+
+GTS is a third person open world action game built entirely from scratch in Godot Engine, designed and optimized specifically for Android. Every core system — the world, the character, the controls, the camera, the performance — has been built and tuned by hand.
 
 <br>
 
-## What This Project Actually Is
+## The City
 
-GTS is not a tutorial project. It is a ground-up open world action game, engineered specifically for Android, where every core system — movement, camera, combat, input, performance — was built and tuned by hand rather than pulled from a template.
+A multi-zone urban environment built from modular street blocks, with dynamic lighting and real-time shadows. The world is split into independent zones rather than one large scene, so it can scale as new areas are added.
 
-<br>
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### The City
-
-A multi-zone urban environment stitched together from modular street blocks, layered with dynamic lighting and live shadow casting. The world is not one giant scene — it is split into independently loaded zones, built to scale as the game grows.
-
-</td>
-<td width="50%" valign="top">
-
-<img src="Assets/Images/2.jpg" width="100%">
-
-</td>
-</tr>
-</table>
+![City Environment](Assets/Images/2.jpg)
 
 <br>
 
-<table>
-<tr>
-<td width="50%" valign="top">
+## The Character
 
-<img src="Assets/Images/3.jpg" width="100%">
+A fully rigged character driven by a layered animation system using AnimationPlayer and AnimationMixer. Movement, jumping, running, and combat reactions blend smoothly into one another instead of snapping between states.
 
-</td>
-<td width="50%" valign="top">
-
-### The Character
-
-A fully rigged skeleton driving a layered animation pipeline through AnimationPlayer and AnimationMixer. Locomotion, jump, run, and combat reactions like Hit Head blend into each other instead of snapping — built to feel like a real character, not a placeholder.
-
-</td>
-</tr>
-</table>
+![Character](Assets/Images/3.jpg)
 
 <br>
 
-<table>
-<tr>
-<td width="50%" valign="top">
+## Touch Controls
 
-### Touch, Rebuilt From Zero
+A complete custom input system built for mobile from the ground up — a virtual joystick for movement and dedicated touch buttons for run, jump, and combat, tuned to feel responsive on different screen sizes.
 
-No ported keyboard scheme. The entire control layer was designed for fingers — a virtual joystick for movement and dedicated touch buttons for run, jump, and combat, tuned for responsiveness across different screen sizes.
-
-</td>
-<td width="50%" valign="top">
-
-<img src="Assets/Images/4.jpg" width="100%">
-
-</td>
-</tr>
-</table>
+![Touch Controls](Assets/Images/4.jpg)
 
 <br>
 
-<table>
-<tr>
-<td width="50%" valign="top">
+## Camera and HUD
 
-<img src="Assets/Images/5.jpg" width="100%">
+A SpringArm3D camera keeps the player framed and collision-aware at all times. The HUD includes a live minimap so the player always has spatial awareness while moving through the city.
 
-</td>
-<td width="50%" valign="top">
-
-### Camera, HUD, and the Map
-
-A SpringArm3D camera keeps the action framed and collision-aware at all times. The HUD layers a live minimap on top of gameplay so the player always knows where they stand in the city.
-
-</td>
-</tr>
-</table>
+![HUD and Minimap](Assets/Images/5.jpg)
 
 <br>
 
-## Under the Hood
+## Tech Stack
 
-| System | Built With |
-|---|---|
-| Engine | Godot Engine 4.6.1 |
-| Scripting | GDScript |
-| Rendering | Forward+ Mobile Pipeline |
-| Animation | AnimationPlayer + AnimationMixer |
-| Camera | SpringArm3D Third Person Rig |
-| Input | Custom Virtual Joystick + TouchScreenButton |
-| Physics | CollisionShape3D |
-| Optimization | Custom Performance Manager |
+- Engine: Godot Engine 4.6.1
+- Scripting: GDScript
+- Rendering: Forward+ Mobile Pipeline
+- Animation: AnimationPlayer, AnimationMixer
+- Camera: SpringArm3D
+- Input: Custom Virtual Joystick, TouchScreenButton
+- Physics: CollisionShape3D
+- Optimization: Custom Performance Manager
 
 <br>
 
-## How It's Structured
+## Project Structure
 
-The project is built scene-first, not script-first. The player is a self-contained unit — rig, collider, camera, and animation controller all packed into one reusable scene. The city is split into independent zone scenes pulled together by a central control layer, so new districts can be added without touching existing ones. UI lives entirely outside the world logic, which keeps the HUD and controls portable across every scene in the game.
-
-<br>
-
-## What's Coming
-
-```
-[ ] Combat system and enemy AI
-[ ] Mission structure and story progression
-[ ] New city zones and landmarks
-[ ] Expanded combat animation set
-[ ] Save and progression system
-```
+The player is a self-contained scene combining the rig, collider, camera, and animation controller. The city is split into independent zone scenes connected through a central control layer, allowing new districts to be added without affecting existing ones. UI and HUD logic are kept separate from world logic, keeping them portable across scenes.
 
 <br>
 
-<div align="center">
+## Roadmap
 
-## Built By
+- Combat system and enemy AI
+- Mission structure and story progression
+- New city zones and landmarks
+- Expanded combat animation set
+- Save and progression system
 
-**Paras Sharma**
-Zerox Team
+<br>
 
-<sub>GTS is in active development — this README will evolve with the project.</sub>
+## Team
 
-</div>
+**Developer:** Paras Sharma
+**Team:** Zerox Team
+
+<br>
+
+<sub>GTS is in active development. This README will be updated as the project grows.</sub>
